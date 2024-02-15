@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deployment to Heroku</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0.5rem 8%;
+        background-color: #dedbdb;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      a {
+        color: #333;
+        font-size: 1.6rem;
+        margin-right: 0.4rem;
+      }
+      main {
+        margin: 4rem 8%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      img {
+        width: 30%;
+        height: 300px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2>Home</h2>
+
+      <div>
+        <a href="/logout">logout</a>
+        <a href="/upload">Upload</a>
+      </div>
+    </nav>
+    <main>
+      {% for image in images %} {% if image.image %}
+      <img src="{{ image.image.url }}" alt="" />
+      {% endif %} {% endfor %}
+    </main>
+  </body>
+</html>
